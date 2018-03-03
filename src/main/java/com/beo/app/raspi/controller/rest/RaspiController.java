@@ -2,8 +2,8 @@ package com.beo.app.raspi.controller.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,17 +14,17 @@ import org.springframework.stereotype.Component;
 @Path("/control")
 public class RaspiController {
 
+	@Autowired
+	private ControlService controlService;
+
 	public RaspiController() {
 		super();
 	}
 
 	@Path("/shutdown")
 	@GET
-	@Produces("application/text")
 	public String shutdown() {
-		String command = "shutting down now";
-		System.out.println(command);
-		return command;
+		return controlService.shutdown();
 	}
 
 	@Path("/reboot")
