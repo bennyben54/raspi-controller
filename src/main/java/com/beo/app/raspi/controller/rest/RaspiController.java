@@ -27,4 +27,13 @@ public class RaspiController {
 		return command;
 	}
 
+	@Path("/reboot")
+	@GET
+	@Produces("application/text")
+	public String reboot() {
+		String command = "rebooting now";
+		System.out.println(command);
+		return command;
+	}
+
 }
