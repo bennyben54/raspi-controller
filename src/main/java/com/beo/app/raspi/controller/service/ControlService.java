@@ -1,4 +1,4 @@
-package com.beo.app.raspi.controller.rest;
+package com.beo.app.raspi.controller.service;
 
 import org.springframework.stereotype.Service;
 
